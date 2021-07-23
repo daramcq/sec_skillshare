@@ -85,4 +85,41 @@ if __name__ == '__main__':
 You can run this using `python swapi.py`.
 
 ### Challenges
-Let's see if we can get a list of _all_ the Star Wars spaceships. Note that if we request `https://swapi.dev/api/starships/`, the response JSON has a key `'next'`. This will give us a value like `'https://swapi.dev/api/starships/?page=2'`.
+#### First Challenge
+Let's see if we can get a list of _all_ the Star Wars spaceships. Note that if we request `https://swapi.dev/api/starships/`, the response JSON has a key `'next'`. This will give us a value like `'https://swapi.dev/api/starships/?page=2'`. Note also, that we can create a list like this:
+```python
+empty_list = []
+```
+And we can add to it like this:
+```python
+empty_list.append(1)
+```
+If we want to iterate through a list (like, for instance, a list of spaceships in a JSON response), we can do it like this:
+```python
+nums = [1, 2, 3]
+for x in nums:
+    print(x)
+```
+
+#### Second Challenge
+Now that we have a list of spaceships, let's see if we can figure out which is the most expensive (using `'cost_in_credits'`. We can _sort_ a list using `sorted`.
+```python
+>>> sorted([1,3,2])
+[1,2,3]
+>>> sorted(1,3,2], reverse=True)
+[3,2,1]
+```
+#### Third Challenge
+Each spaceship has a `'manufacturer'`. Let's see if we can figure out which manufacturer made the most ships. You might want to create `dict` to help with this.
+```python
+>>> mydict = {}
+```
+You can add a 'key-value' pair like this:
+```python
+>>> mydict['a'] = 100
+```
+And then access like this:
+```python
+>>> mydict['a']
+100
+```
