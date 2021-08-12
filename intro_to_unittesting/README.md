@@ -25,3 +25,4 @@ Most of the code we write will be more complicated than this. We may keep state 
 There are some examples of both of these cases in `mockery.py`.
 
 ## Mock external HTTP Calls
+Another common source of external data is HTTP calls. We don't want unittests to make these HTTP calls, but we do want to test that our code handles them correctly. Thankfully, there are several good libraries to help us do this. I like `responses`. You can use this to set up sample data for a specific HTTP request and also to confirm that the request was made.
