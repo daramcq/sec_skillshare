@@ -23,7 +23,7 @@ However, more Pythonic again is list comprehension. This is a particularly popul
 ```python
 [print(x) for x in [1, 2, 3]]
 ```
-We can also use this style for creating a new dictionary.
+We can also use this style for creating a new list.
 ```python
 squares = [x * x for x in [1, 2, 3]]
 ```
@@ -45,18 +45,19 @@ for key, value in d.items()
 ## _Explicit is better than implicit_
 Anyone who has coded with Ruby will know all about implicit behaviour. This is evident where your objects have methods and behaviours that are defined in some mysterious place in your codebase (or a dependency). Python, in contrast, requires, or at least promotes, explicit behaviours. For instance, imports are clearly stated:
 ```python
-from module import method
+from logging import logger
 # Or
 import module.method
 # Discouraged
 from module import *
+
 ```
 You can be implicit with Python, but it's best practice to make things clear.
 
 ## _Errors should never pass silently_
 One difference in Python style to Ruby style is the level of tolerance for `nil`, or `None`. Typically, Ruby will avoid throwing errors if possible, and will return `nil` instead. We can see this in some Rails behaviour.
 ```rb
-> Zendesk::Project.find_by(name: 'foo')
+> Person.find_by(name: 'foo')
 => nil
 ```
 Generally the impact is that you add 'guard clauses' to your code. For e.g.
@@ -79,5 +80,3 @@ for nm in names:
     except Person.DoesNotExist:
         pass
 ```
-    
-    
