@@ -1,0 +1,16 @@
+name: 'test'
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  print_branch_name:
+    name: print_branch_name
+    runs-on: [ubuntu-latest]
+    steps:
+      - id: print_name
+        run: |
+          branchName="${{ github.head_ref }}"
+          echo $branchName
+        shell: bash
