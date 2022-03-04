@@ -5,3 +5,4 @@ This folder tracks a number of resources around the Python language.
 - [Introduction to Virtual Environments](./virtualenvs/)
 - [Unit Testing](./unittesting/)
 - [Pythonic](./pythonic/)
+foo
