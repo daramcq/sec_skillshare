@@ -2,6 +2,10 @@ name: 'test'
 
 on:
   pull_request:
+    branches: [main]
+
+jobs:
+  print_branch_name:
     steps:
       - id: print_name
         run: |
