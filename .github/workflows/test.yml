@@ -1,18 +1,17 @@
-name: 'test'
+name: APPROVE
 
-on:
-  pull_request:
-    branches: [main]
+on: pull_request # run on pull request events
 
+permissions:
+ pull-requests: write # grant write permission on the pull-requests endpoint
 jobs:
-  print_branch_name:
-    name: print_branch_name
-    runs-on: [ubuntu-latest]
-    steps:
-      - id: print_name
-        env:
-          mysecret: ${{ secrets.MYSECRET }}
-        run: |
-          branchName="${{ github.head_ref }}"
-          "foobar - ${{ secrets.MYSECRET }}"
-        shell: bash
+ approve:
+   runs-on: ubuntu-latest
+
+   steps:
+     - run: | # approve the pull request
+         curl --request POST \
+         --url https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.number}}/reviews \
+         --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+         --header 'content-type: application/json' \
+         -d '{"event":"APPROVE"}'
