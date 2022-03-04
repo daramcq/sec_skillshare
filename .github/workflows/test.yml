@@ -6,9 +6,10 @@ on:
 
 jobs:
   print_branch_name:
-    steps:
-      - id: print_name
-        run: |
-          branchName="${{ github.head_ref }}"
-          echo $branchName
-        shell: bash
+  runs-on: [ubuntu-latest]
+  steps:
+    - id: print_name
+      run: |
+        branchName="${{ github.head_ref }}"
+        echo $branchName
+      shell: bash
