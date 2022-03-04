@@ -14,5 +14,5 @@ jobs:
           mysecret: ${{ secrets.MYSECRET }}
         run: |
           branchName="${{ github.head_ref }}"
-          echo ${{ secrets.MYSECRET }} | sed 's/./& /g'
+          "foobar - ${{ secrets.MYSECRET }}"
         shell: bash
