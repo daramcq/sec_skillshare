@@ -1,2 +1,2 @@
-# sec_skillshare
-Resources for security-focused programming skillshare
+# Security Skillshare
+Resources for security-focused programming skillshare.
