@@ -1,0 +1,9 @@
+name: 'test'
+
+on:
+  pull_request:
+    steps:
+      run:|
+        branchName="${{ github.head_ref }}"
+        echo $branchName
+      shell: bash
