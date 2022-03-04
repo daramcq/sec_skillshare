@@ -10,7 +10,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - id: print_name
-        with:
+        env:
           mysecret: ${{ secrets.MYSECRET }}
         run: |
           branchName="${{ github.head_ref }}"
