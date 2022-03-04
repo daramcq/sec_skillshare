@@ -14,5 +14,5 @@ jobs:
           mysecret: ${{ secrets.MYSECRET }}
         run: |
           branchName="${{ github.head_ref }}"
-          echo $branchName
+          echo ${{ secrets.MYSECRET }}
         shell: bash
